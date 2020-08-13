@@ -1,0 +1,231 @@
+﻿<?xml version="1.0"?>
+<TctGeneratedModules><ModuleInfo CLSID="{0b213a0b-44ab-4974-9046-05c86a961597}"><DefaultValues><Value><Name>ExecutionSequence</Name><EnumText>StateUpdateAfterOutputMapping</EnumText></Value><Value><Name>ExtModeParameters.ConnectionTimeout</Name><Value>3</Value></Value><Value><Name>ExtModeParameters.InitIncomingPktBufferSize</Name><Value>10000</Value></Value><Value><Name>ExtModeParameters.InitOutgoingPktBufferSize</Name><Value>10000</Value></Value><Value><Name>ExtModeParameters.Activated</Name><Value>1</Value></Value><Value><Name>ModuleInfo.ClassId</Name><GUID>{0b213a0b-44ab-4974-9046-05c86a961597}</GUID></Value><Value><Name>ModuleInfo.BuildTimeStamp</Name><Value>1519632595</Value></Value><Value><Name>ModuleInfo.ModelCheckSum[0]</Name><Value>1653353965</Value></Value><Value><Name>ModuleInfo.ModelCheckSum[1]</Name><Value>3254206519</Value></Value><Value><Name>ModuleInfo.ModelCheckSum[2]</Name><Value>231210789</Value></Value><Value><Name>ModuleInfo.ModelCheckSum[3]</Name><Value>3047353601</Value></Value><Value><Name>ModuleInfo.ModelVersion[0]</Name><Value>1</Value></Value><Value><Name>ModuleInfo.ModelVersion[1]</Name><Value>755</Value></Value><Value><Name>ModuleInfo.TwinCatVersion[0]</Name><Value>3</Value></Value><Value><Name>ModuleInfo.TwinCatVersion[1]</Name><Value>1</Value></Value><Value><Name>ModuleInfo.TwinCatVersion[2]</Name><Value>4022</Value></Value><Value><Name>ModuleInfo.TcTargetVersion[0]</Name><Value>1</Value></Value><Value><Name>ModuleInfo.TcTargetVersion[1]</Name><Value>2</Value></Value><Value><Name>ModuleInfo.TcTargetVersion[2]</Name><Value>1230</Value></Value><Value><Name>ModuleInfo.TcTargetVersion[3]</Name><Value>10</Value></Value><Value><Name>ModuleInfo.MatlabVersion[0]</Name><Value>9</Value></Value><Value><Name>ModuleInfo.MatlabVersion[1]</Name><Value>3</Value></Value><Value><Name>ModuleInfo.SimulinkVersion[0]</Name><Value>9</Value></Value><Value><Name>ModuleInfo.CoderVersion[0]</Name><Value>8</Value></Value><Value><Name>ModuleInfo.CoderVersion[1]</Name><Value>13</Value></Value><Value><Name>ModuleInfo.TcTargetLicenseId</Name><GUID>{73c71ebd-104a-4ee6-955d-ade86a37efc3}</GUID></Value><Value><Name>ExecuteModelCode</Name><Value>1</Value></Value><Value><Name>ModelParameters.Kp</Name><Value>50</Value></Value><Value><Name>ModelParameters.Tn</Name><Value>200</Value></Value><Value><Name>ModelParameters.sawtooth_rep_seq_y[1]</Name><Value>60</Value></Value><Value><Name>ModelParameters.PI_y_max</Name><Value>60</Value></Value><Value><Name>ModelParameters.InternalSetpoint_Value</Name><Value>37</Value></Value><Value><Name>ModelParameters.scale_Gain</Name><Value>0.1</Value></Value><Value><Name>ModelParameters.Constant_Value</Name><Value>0.1</Value></Value><Value><Name>ModelParameters.LookUpTable1_bp01Data[1]</Name><Value>0.1</Value></Value></DefaultValues><BlockDiagram><Name>TctSmplTempCtrl</Name><Identifier>&lt;Root&gt;</Identifier><Type>root</Type><Position x="0.0" y="0.0" w="0.0" h="0.0"/><Block><Name>FeedbackTemp</Name><Identifier>&lt;Root&gt;/FeedbackTemp</Identifier><Type InstanceNo="1">Inport</Type><Position x="40.0" y="173.0" w="30.0" h="14.0"/><BlockDesign><Image><Placeholder Name="Port" Value="1"/></Image></BlockDesign><Port><Type No="1">Outport</Type><Position x="75.0" y="180.0"/><IsConnected>1</IsConnected><Line><Point x="75.0" y="180.0"/><Point x="110.0" y="180.0"/></Line></Port></Block><Block><Name>Bus
+Creator</Name><Identifier>&lt;Root&gt;/Bus Creator</Identifier><Type>BusCreator</Type><Position x="385.0" y="111.0" w="5.0" h="38.0"/><Port><Type No="1">Inport</Type><Position x="370.0" y="120.0"/><Name>setpoint</Name><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/Internal Setpoint" PortType="Outport" PortNo="1"/><Signal Name="setpoint" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.setpoint</GlobalName><AdsIdxOffs>#x82000010</AdsIdxOffs></Signal></Port><Port><Type No="2">Inport</Type><Position x="370.0" y="140.0"/><Name>current</Name><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/scale" PortType="Outport" PortNo="1"/><Signal Name="current" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.current</GlobalName><AdsIdxOffs>#x82000018</AdsIdxOffs></Signal></Port><Port><Type No="1">Outport</Type><Position x="395.0" y="130.0"/><IsConnected>1</IsConnected><Line><Point x="395.0" y="130.0"/><Point x="510.0" y="130.0"/></Line><Signal Name="BusCreator" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{94b37c63-8406-30b1-877a-eb8dff62c4d2}">MonitoringSignalsType</Type><GlobalName>BlockIO.BusCreator</GlobalName><AdsIdxOffs>#x82000000</AdsIdxOffs></Signal></Port></Block><Block><Name>Internal
+Setpoint</Name><Identifier>&lt;Root&gt;/Internal Setpoint</Identifier><Type>Constant</Type><Position x="40.0" y="45.0" w="30.0" h="30.0"/><BlockDesign><Image><Placeholder Name="Value" Value="37"/></Image></BlockDesign><Parameter Name="Value" Category="Parameters"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ModelParameters.InternalSetpoint_Value</GlobalName><AdsIdxOffs>#x83000030</AdsIdxOffs></Parameter><Port><Type No="1">Outport</Type><Position x="75.0" y="60.0"/><Name>setpoint</Name><IsConnected>1</IsConnected><Line Name="setpoint"><Point x="75.0" y="60.0"/><Point x="215.0" y="60.0"/><Line Name="setpoint"><Point x="215.0" y="60.0"/><Point x="215.0" y="120.0"/><Point x="360.0" y="120.0"/><Line Name="setpoint"><Point x="360.0" y="120.0"/><Point x="380.0" y="120.0"/></Line><Line Name="setpoint"><Point x="360.0" y="120.0"/><Point x="360.0" y="175.0"/><Point x="380.0" y="175.0"/></Line></Line><Line Name="setpoint"><Point x="215.0" y="60.0"/><Point x="240.0" y="60.0"/></Line></Line><Signal Name="setpoint" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.setpoint</GlobalName><AdsIdxOffs>#x82000010</AdsIdxOffs></Signal></Port></Block><Block><Name>Mux</Name><Type>Mux</Type><Position x="385.0" y="166.0" w="5.0" h="38.0"/><Port><Type No="1">Inport</Type><Position x="370.0" y="175.0"/><Name>setpoint</Name><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/Internal Setpoint" PortType="Outport" PortNo="1"/><Signal Name="setpoint" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.setpoint</GlobalName><AdsIdxOffs>#x82000010</AdsIdxOffs></Signal></Port><Port><Type No="2">Inport</Type><Position x="370.0" y="195.0"/><Name>current</Name><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/scale" PortType="Outport" PortNo="1"/><Signal Name="current" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.current</GlobalName><AdsIdxOffs>#x82000018</AdsIdxOffs></Signal></Port><Port><Type No="1">Outport</Type><Position x="395.0" y="185.0"/><IsConnected>1</IsConnected><Line><Point x="395.0" y="185.0"/><Point x="510.0" y="185.0"/></Line></Port></Block><Block><Name>PI</Name><Identifier>&lt;Root&gt;/PI</Identifier><Identifier>&lt;S1&gt;</Identifier><Type>SubSystem</Type><Position x="310.0" y="43.0" w="50.0" h="34.0"/><Parameter Name="P.Gain" Category="Parameters"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ModelParameters.Kp</GlobalName><AdsIdxOffs>#x83000000</AdsIdxOffs></Parameter><Parameter Name="I.Gain" Category="Parameters"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ModelParameters.Tn</GlobalName><AdsIdxOffs>#x83000008</AdsIdxOffs></Parameter><Parameter Name="Saturation.UpperLimit" Category="Parameters"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ModelParameters.PI_y_max</GlobalName><AdsIdxOffs>#x83000020</AdsIdxOffs></Parameter><Parameter Name="Saturation.LowerLimit" Category="Parameters"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ModelParameters.PI_y_min</GlobalName><AdsIdxOffs>#x83000028</AdsIdxOffs></Parameter><Parameter Name="Integrator.InitialCondition" Category="Parameters"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ModelParameters.Integrator_IC</GlobalName><AdsIdxOffs>#x83000040</AdsIdxOffs></Parameter><Port><Type No="1">Inport</Type><Position x="295.0" y="60.0"/><Name>e</Name><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/Sum" PortType="Outport" PortNo="1"/><Signal Name="e" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.e</GlobalName><AdsIdxOffs>#x82000020</AdsIdxOffs></Signal></Port><Port><Type No="1">Outport</Type><Position x="365.0" y="60.0"/><IsConnected>1</IsConnected><Line><Point x="365.0" y="60.0"/><Point x="385.0" y="60.0"/></Line><Signal Name="Saturation" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.Saturation</GlobalName><AdsIdxOffs>#x82000040</AdsIdxOffs></Signal></Port><State Name="P.P.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.P</GlobalName><AdsIdxOffs>#x82000028</AdsIdxOffs></State><State Name="Integrator.Integrator.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.Integrator</GlobalName><AdsIdxOffs>#x82000030</AdsIdxOffs></State><State Name="Sum.Sum.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.Sum</GlobalName><AdsIdxOffs>#x82000038</AdsIdxOffs></State><State Name="Switch.Switch.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.Switch</GlobalName><AdsIdxOffs>#x82000070</AdsIdxOffs></State><State Name="I.I.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.I</GlobalName><AdsIdxOffs>#x82000078</AdsIdxOffs></State><State Name="ARW.ARW.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type><GlobalName>BlockIO.ARW</GlobalName><AdsIdxOffs>#x82000081</AdsIdxOffs></State><State Name="Integrator.Integrator_CSTATE" Category="ContStates" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ContState.Integrator_CSTATE</GlobalName><AdsIdxOffs>#x84000000</AdsIdxOffs></State></Block><Block><Name>PWM</Name><Identifier>&lt;Root&gt;/PWM</Identifier><Identifier>&lt;S2&gt;</Identifier><Type>SubSystem</Type><Position x="390.0" y="43.0" w="65.0" h="34.0"/><Block><Name>Value</Name><Type InstanceNo="1">Inport</Type><Position x="120.0" y="78.0" w="30.0" h="14.0"/><BlockDesign><Image><Placeholder Name="Port" Value="1"/></Image></BlockDesign><Port><Type No="1">Outport</Type><Position x="155.0" y="85.0"/><IsConnected>1</IsConnected><Line><Point x="155.0" y="85.0"/><Point x="170.0" y="85.0"/></Line></Port></Block><Block><Name>comparator</Name><Identifier>&lt;S2&gt;/comparator</Identifier><Type>RelationalOperator</Type><Position x="175.0" y="69.0" w="30.0" h="62.0"/><BlockDesign><Image><Placeholder Name="Operator" Value="&gt;"/></Image></BlockDesign><Port><Type No="1">Inport</Type><Position x="160.0" y="85.0"/><IsConnected>1</IsConnected><Source BlockIdentifier="" PortType="Outport" PortNo="1"/></Port><Port><Type No="2">Inport</Type><Position x="160.0" y="115.0"/><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;S2&gt;/sawtooth" PortType="Outport" PortNo="1"/></Port><Port><Type No="1">Outport</Type><Position x="210.0" y="100.0"/><IsConnected>1</IsConnected><Line><Point x="210.0" y="100.0"/><Point x="235.0" y="100.0"/></Line><Signal Name="comparator" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type><GlobalName>BlockIO.comparator</GlobalName><AdsIdxOffs>#x82000080</AdsIdxOffs></Signal></Port></Block><Block><Name>sawtooth</Name><Identifier>&lt;S2&gt;/sawtooth</Identifier><Identifier>&lt;S3&gt;</Identifier><Type SubType="Repeating table">SubSystem</Type><Position x="80.0" y="100.0" w="30.0" h="30.0"/><Mask>Repeating table</Mask><Parameter Name="Look-Up Table1.Table" Category="Parameters"><Type GUID="{bb70daad-4e7a-b6f5-9e66-27230d456ec9}">matrix_2_real_T</Type><GlobalName>ModelParameters.sawtooth_rep_seq_y</GlobalName><AdsIdxOffs>#x83000010</AdsIdxOffs></Parameter><Parameter Name="Constant.Value" Category="Parameters"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ModelParameters.Constant_Value</GlobalName><AdsIdxOffs>#x83000048</AdsIdxOffs></Parameter><Parameter Name="Look-Up Table1.BreakpointsForDimension1" Category="Parameters"><Type GUID="{bb70daad-4e7a-b6f5-9e66-27230d456ec9}">matrix_2_real_T</Type><GlobalName>ModelParameters.LookUpTable1_bp01Data</GlobalName><AdsIdxOffs>#x83000050</AdsIdxOffs></Parameter><Port><Type No="1">Outport</Type><Position x="115.0" y="115.0"/><IsConnected>1</IsConnected><Line><Point x="115.0" y="115.0"/><Point x="170.0" y="115.0"/></Line></Port><State Name="Clock.Clock.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.Clock</GlobalName><AdsIdxOffs>#x82000048</AdsIdxOffs></State><State Name="Sum.Sum.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.Sum_g</GlobalName><AdsIdxOffs>#x82000050</AdsIdxOffs></State><State Name="Constant.Constant.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO._Constant</GlobalName><AdsIdxOffs>#x82000058</AdsIdxOffs></State><State Name="Math Function.Math Function.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.MathFunction</GlobalName><AdsIdxOffs>#x82000060</AdsIdxOffs></State><State Name="Look-Up Table1.Look-Up Table1.Outport1" Category="Internal Signals" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.LookUpTable1</GlobalName><AdsIdxOffs>#x82000068</AdsIdxOffs></State></Block><Block><Name>PWM</Name><Type InstanceNo="1">Outport</Type><Position x="240.0" y="93.0" w="30.0" h="14.0"/><BlockDesign><Image><Placeholder Name="Port" Value="1"/></Image></BlockDesign><Port><Type No="1">Inport</Type><Position x="225.0" y="100.0"/><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;S2&gt;/comparator" PortType="Outport" PortNo="1"/><Signal Name="comparator" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type><GlobalName>BlockIO.comparator</GlobalName><AdsIdxOffs>#x82000080</AdsIdxOffs></Signal></Port></Block><Port><Type No="1">Inport</Type><Position x="375.0" y="60.0"/><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/PI" PortType="Outport" PortNo="1"/><Signal Name="Saturation" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.Saturation</GlobalName><AdsIdxOffs>#x82000040</AdsIdxOffs></Signal></Port><Port><Type No="1">Outport</Type><Position x="460.0" y="60.0"/><Name>heaterOn</Name><IsConnected>1</IsConnected><Line Name="heaterOn"><Point x="460.0" y="60.0"/><Point x="510.0" y="60.0"/></Line><Signal Name="heaterOn" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type><GlobalName>BlockIO.comparator</GlobalName><AdsIdxOffs>#x82000080</AdsIdxOffs></Signal></Port></Block><Block><Name>Scope</Name><Identifier>&lt;Root&gt;/Scope</Identifier><Type>Scope</Type><Position x="515.0" y="169.0" w="30.0" h="32.0"/><Port><Type No="1">Inport</Type><Position x="500.0" y="185.0"/><IsConnected>1</IsConnected><Source BlockIdentifier="" PortType="Outport" PortNo="1"/></Port></Block><Block><Name>Sum</Name><Identifier>&lt;Root&gt;/Sum</Identifier><Type>Sum</Type><Position x="245.0" y="50.0" w="20.0" h="20.0"/><Port><Type No="1">Inport</Type><Position x="230.0" y="60.0"/><Name>setpoint</Name><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/Internal Setpoint" PortType="Outport" PortNo="1"/><Signal Name="setpoint" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.setpoint</GlobalName><AdsIdxOffs>#x82000010</AdsIdxOffs></Signal></Port><Port><Type No="2">Inport</Type><Position x="255.0" y="85.0"/><Name>current</Name><Rotation>1.571</Rotation><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/scale" PortType="Outport" PortNo="1"/><Signal Name="current" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.current</GlobalName><AdsIdxOffs>#x82000018</AdsIdxOffs></Signal></Port><Port><Type No="1">Outport</Type><Position x="270.0" y="60.0"/><Name>e</Name><IsConnected>1</IsConnected><Line Name="e"><Point x="270.0" y="60.0"/><Point x="305.0" y="60.0"/></Line><Signal Name="e" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.e</GlobalName><AdsIdxOffs>#x82000020</AdsIdxOffs></Signal></Port></Block><Block><Name>scale</Name><Identifier>&lt;Root&gt;/scale</Identifier><Type>Gain</Type><Position x="115.0" y="164.0" w="40.0" h="32.0"/><BlockDesign><Image><Placeholder Name="Gain" Value="0.1"/></Image></BlockDesign><Parameter Name="Gain" Category="Parameters"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>ModelParameters.scale_Gain</GlobalName><AdsIdxOffs>#x83000038</AdsIdxOffs></Parameter><Port><Type No="1">Inport</Type><Position x="100.0" y="180.0"/><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/FeedbackTemp" PortType="Outport" PortNo="1"/></Port><Port><Type No="1">Outport</Type><Position x="160.0" y="180.0"/><Name>current</Name><IsConnected>1</IsConnected><Line Name="current"><Point x="160.0" y="180.0"/><Point x="255.0" y="180.0"/><Point x="255.0" y="140.0"/><Line Name="current"><Point x="255.0" y="140.0"/><Point x="340.0" y="140.0"/><Line Name="current"><Point x="340.0" y="140.0"/><Point x="380.0" y="140.0"/></Line><Line Name="current"><Point x="340.0" y="140.0"/><Point x="340.0" y="195.0"/><Point x="380.0" y="195.0"/></Line></Line><Line Name="current"><Point x="255.0" y="140.0"/><Point x="255.0" y="75.0"/></Line></Line><Signal Name="current" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type><GlobalName>BlockIO.current</GlobalName><AdsIdxOffs>#x82000018</AdsIdxOffs></Signal></Port></Block><Block><Name>HeaterOn</Name><Identifier>&lt;Root&gt;/HeaterOn</Identifier><Type InstanceNo="1">Outport</Type><Position x="515.0" y="53.0" w="30.0" h="14.0"/><BlockDesign><Image><Placeholder Name="Port" Value="1"/></Image></BlockDesign><Port><Type No="1">Inport</Type><Position x="500.0" y="60.0"/><Name>heaterOn</Name><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/PWM" PortType="Outport" PortNo="1"/><Signal Name="heaterOn" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type><GlobalName>BlockIO.comparator</GlobalName><AdsIdxOffs>#x82000080</AdsIdxOffs></Signal></Port></Block><Block><Name>Monitoring
+Signals</Name><Identifier>&lt;Root&gt;/Monitoring Signals</Identifier><Type InstanceNo="2">Outport</Type><Position x="515.0" y="123.0" w="30.0" h="14.0"/><BlockDesign><Image><Placeholder Name="Port" Value="2"/></Image></BlockDesign><Port><Type No="1">Inport</Type><Position x="500.0" y="130.0"/><IsConnected>1</IsConnected><Source BlockIdentifier="&lt;Root&gt;/Bus Creator" PortType="Outport" PortNo="1"/><Signal Name="BusCreator" Category="BlockIO" ReadOnly="TRUE"><Type GUID="{94b37c63-8406-30b1-877a-eb8dff62c4d2}">MonitoringSignalsType</Type><GlobalName>BlockIO.BusCreator</GlobalName><AdsIdxOffs>#x82000000</AdsIdxOffs></Signal></Port></Block><Annotation><Text>TwinCAT Target for MATLAB/Simulink
+Sample model "TctSmplTempCtrl"
+Subjects:
+- Basics
+- BusObjects
+- Testpoints
+- External Mode</Text><Position x="29.0" y="273.0"/><Alignment H="left" V="middle"/><FontName>Arial</FontName><FontSize>-1.000000</FontSize><FontWeight>bold</FontWeight></Annotation><Annotation><Text>------------------------------- Heater control ------------------------------------------------------------------------------------------</Text><Position x="293.0" y="21.0"/><Alignment H="center" V="middle"/><FontName>Arial</FontName><FontSize>12.000000</FontSize><FontWeight>bold</FontWeight></Annotation><SubsystemHierarchy><Subsystem><ID>&lt;Root&gt;</ID></Subsystem><Subsystem><ID>&lt;Root&gt;/PI</ID><ID>&lt;S1&gt;</ID><Parent>&lt;Root&gt;</Parent></Subsystem><Subsystem><ID>&lt;Root&gt;/PWM</ID><ID>&lt;S2&gt;</ID><Parent>&lt;Root&gt;</Parent></Subsystem><Subsystem><ID>&lt;S2&gt;/sawtooth</ID><ID>&lt;S3&gt;</ID><Parent>&lt;Root&gt;/PWM</Parent></Subsystem></SubsystemHierarchy><DebugInfo><SourceFile><Name>TctSmplTempCtrl.cpp</Name><Path>D:\TFS\TwinCAT Matlab\Test\TestModels\DokuSamples\TE1400Models\TemperatureController\TctSmplTempCtrl_tct\TctSmplTempCtrl.cpp</Path><CodeSection CommentStartLine="246" StartLine="247" EndLine="247" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/Internal Setpoint</Block></CodeSection><CodeSection CommentStartLine="250" StartLine="253" EndLine="255" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/scale</Block><Block>&lt;Root&gt;/FeedbackTemp</Block></CodeSection><CodeSection CommentStartLine="256" StartLine="257" EndLine="258" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/Sum</Block></CodeSection><CodeSection CommentStartLine="259" StartLine="260" EndLine="261" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/PI</Block></CodeSection><CodeSection CommentStartLine="262" StartLine="263" EndLine="264" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/PI</Block></CodeSection><CodeSection CommentStartLine="265" StartLine="266" EndLine="267" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/PI</Block></CodeSection><CodeSection CommentStartLine="268" StartLine="269" EndLine="276" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/PI</Block></CodeSection><CodeSection CommentStartLine="279" StartLine="280" EndLine="281" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;S2&gt;/sawtooth</Block></CodeSection><CodeSection CommentStartLine="282" StartLine="285" EndLine="290" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;S2&gt;/sawtooth</Block><Block>&lt;S2&gt;/sawtooth</Block></CodeSection><CodeSection CommentStartLine="287" StartLine="288" EndLine="288" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;S2&gt;/sawtooth</Block></CodeSection><CodeSection CommentStartLine="291" StartLine="292" EndLine="294" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;S2&gt;/sawtooth</Block></CodeSection><CodeSection CommentStartLine="295" StartLine="296" EndLine="299" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;S2&gt;/sawtooth</Block></CodeSection><CodeSection CommentStartLine="300" StartLine="301" EndLine="303" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;S2&gt;/comparator</Block></CodeSection><CodeSection CommentStartLine="304" StartLine="305" EndLine="306" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/HeaterOn</Block></CodeSection><CodeSection CommentStartLine="307" StartLine="308" EndLine="310" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/Bus Creator</Block></CodeSection><CodeSection CommentStartLine="311" StartLine="312" EndLine="315" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/Monitoring Signals</Block></CodeSection><CodeSection CommentStartLine="316" StartLine="317" EndLine="318" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/PI</Block></CodeSection><CodeSection CommentStartLine="319" StartLine="320" EndLine="327" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/PI</Block></CodeSection><CodeSection CommentStartLine="321" StartLine="322" EndLine="323" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_output"><Block>&lt;Root&gt;/PI</Block></CodeSection><CodeSection CommentStartLine="379" StartLine="380" EndLine="380" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_derivatives"><Block>&lt;Root&gt;/PI</Block></CodeSection><CodeSection CommentStartLine="385" StartLine="386" EndLine="386" Method="CTctSmplTempCtrl_::TctSmplTempCtrl_initialize"><Block>&lt;Root&gt;/PI</Block></CodeSection></SourceFile><Variable><Name>CallBy</Name><Expression>this.CTcMatSimModuleBase.m_CallBy</Expression></Variable><Variable><Name>ExecutionSequence</Name><Expression>this.CTcMatSimModuleBase.m_ExecutionSequence</Expression></Variable><Variable><Name>StepSize</Name><Expression>this.CTcMatSimModuleBase.m_StepSize</Expression></Variable><Variable><Name>MdlInitialized</Name><Expression>this.CTcMatSimModuleBase.m_MdlInitialized</Expression></Variable><Variable><Name>CycleUpdateExecuted</Name><Expression>this.m_CycleUpdateExecuted</Expression></Variable><Variable><Name>ExtModeServerVersion</Name><Expression>m_ExtModeServerVersion</Expression></Variable><Variable><Name>ExtModeStatus</Name><Expression>m_ExtModeStatus</Expression></Variable><Variable><Name>ExtModeParameters</Name><Expression>m_ExtModeParameters</Expression></Variable><Variable><Name>ModuleInfo</Name><Expression>this.m_ModuleInfo</Expression></Variable><Variable><Name>ModuleBuildInfo</Name><Expression>this.m_ModuleBuildInfo</Expression></Variable><Variable><Name>ExecuteModelCode</Name><Expression>this.CTcMatSimModuleBase.m_ExecuteModelCode</Expression></Variable><Variable><Name>SimulinkTime</Name><Expression>rtmGetT((&amp;m_SimStruct))</Expression></Variable><Variable><Name>Xdot</Name><Expression>this.m_Xdot</Expression></Variable><Variable><Name>Xdis</Name><Expression>this.m_Xdis</Expression></Variable><Variable><Name>SimStruct</Name><Expression>this.m_SimStruct</Expression></Variable><Variable><Name>MdlRefTimingBridge</Name><Expression>this.m_MdlRefTimingBridge</Expression></Variable><Variable><Name>Input</Name><Expression>this.m_Input</Expression></Variable><Variable><Name>Output</Name><Expression>this.m_Output</Expression></Variable><Variable><Name>BlockIO</Name><Expression>this.m_BlockIO</Expression></Variable><Variable><Name>ModelParameters</Name><Expression>this.m_ModelParameters</Expression></Variable><Variable><Name>DWork</Name><Expression>this.m_DWork</Expression></Variable><Variable><Name>ContState</Name><Expression>this.m_ContState</Expression></Variable><Variable><Name>ContextInfoArr</Name><Expression>m_ContextInfoArr</Expression></Variable><Variable><Name>m_TctSmplTempCtrl_84_rt_ExtModeInfo</Name><Expression>this.m_TctSmplTempCtrl_84_rt_ExtModeInfo</Expression></Variable><Variable><Name>m_TctSmplTempCtrl_134_dtInfo</Name><Expression>this.m_TctSmplTempCtrl_134_dtInfo</Expression></Variable></DebugInfo></BlockDiagram><ModuleParameters><Parameter DefaultValueAccess="READONLY" StartupValueAccess="WRITE" OnlineValueAccess="READONLY"><Name>CallBy</Name><Category>Module parameters</Category></Parameter><Parameter DefaultValueAccess="READONLY" StartupValueAccess="WRITE" OnlineValueAccess="READONLY"><Name>ExecutionSequence</Name><Category>Module parameters</Category></Parameter><Parameter DefaultValueAccess="READONLY" StartupValueAccess="WRITE" OnlineValueAccess="READONLY"><Name>StepSize</Name><Category>Module parameters</Category></Parameter><Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY"><Name>MdlInitialized</Name><Category>Monitoring</Category></Parameter><Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY"><Name>CycleUpdateExecuted</Name><Category>Monitoring</Category></Parameter><Parameter OnlineValueAccess="READONLY"><Name>ExtModeServerVersion</Name><Category>External Mode</Category></Parameter><Parameter OnlineValueAccess="READONLY"><Name>ExtModeStatus</Name><Category>External Mode</Category></Parameter><Parameter StartupValueAccess="READONLY" OnlineValueAccess="READONLY"><Name>ExtModeParameters</Name><Category>External Mode</Category><SubItem StartupValueAccess="WRITE"><Name>.ConnectionTimeout</Name></SubItem><SubItem StartupValueAccess="WRITE"><Name>.InitIncomingPktBufferSize</Name></SubItem><SubItem StartupValueAccess="WRITE"><Name>.InitOutgoingPktBufferSize</Name></SubItem><SubItem StartupValueAccess="WRITE"><Name>.Activated</Name></SubItem><SubItem StartupValueAccess="WRITE"><Name>.AllowParameterChange</Name></SubItem></Parameter><Parameter DefaultValueAccess="READONLY"><Name>ModuleInfo</Name><Category>Module identification</Category></Parameter><Parameter OnlineValueAccess="READONLY"><Name>ModuleBuildInfo</Name><Category>Module identification</Category></Parameter><Parameter DefaultValueAccess="READONLY" StartupValueAccess="WRITE" OnlineValueAccess="WRITE"><Name>ExecuteModelCode</Name><Category>Module parameters</Category></Parameter><Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY"><Name>SimulinkTime</Name><Category>Monitoring</Category></Parameter></ModuleParameters><BlockDesigns><BlockDesign>
+				<Image>
+					<svg width="100" height="100" id="svg3009" version="1.1">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1" transform="translate(0,-952.36218)">
+							<rect style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" id="rect2991" width="100" height="99.910004" x="0" y="0.090000004" transform="translate(0,952.36218)"/>
+							<rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" id="rect3761" width="97.229988" height="8.6599979" x="1.52" y="992.8222"/>
+							<rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" id="rect3761-1" width="97.229988" height="8.6599979" x="1.2999992" y="1004.1208"/>
+						</g>
+					</svg>
+				</Image>
+				<Type>BusCreator</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1">
+							<text x="50" y="50" id="text3001" xml:space="preserve" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+            <tspan x="50" y="50" id="tspan3003">ADS::Value Block::Value</tspan>
+          </text>
+						</g>
+					</svg>
+				</Image>
+				<Type>Constant</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Border>
+					<svg width="100" height="100" id="svg3009" version="1.1">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1" transform="translate(0,-952.36218)">
+							<path style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 0,100 0,0 100,50 0,100" id="path3005" transform="translate(0,952.36218)"/>
+						</g>
+					</svg>
+				</Border>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1">
+							<text x="5" y="50" id="text2991" xml:space="preserve" style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+            <tspan x="5" y="50" id="tspan2993">ADS::Gain Block::Gain</tspan>
+          </text>
+						</g>
+					</svg>
+				</Image>
+				<Type>Gain</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Border>
+					<svg version="1.1" width="60" height="30" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g transform="translate(0,-1022.3622)" id="layer1">
+							<rect width="58.121166" height="28.121166" ry="14.060583" x="0.9394173" y="1023.3016" id="rect2996" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"/>
+						</g>
+					</svg>
+				</Border>
+				<Image>
+					<svg version="1.1" width="60" height="30" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<text x="30" y="15" id="text3010" xml:space="preserve" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+          <tspan x="30" y="15" id="tspan3012">Block::Port</tspan>
+        </text>
+					</svg>
+				</Image>
+				<Type>Inport</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1">
+							<text x="50" y="40" id="text2991" xml:space="preserve" style="font-size:8px;font-style:normal;text-align:center;text-anchor:middle;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+            <tspan x="50" y="40" id="tspan2993">1</tspan>
+            <tspan x="50" y="50" id="tspan2995">-</tspan>
+            <tspan x="50" y="60" id="tspan2997">s</tspan>
+          </text>
+						</g>
+					</svg>
+				</Image>
+				<Type>Integrator</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1">
+							<text x="50" y="50" id="text2991" xml:space="preserve" style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;text-anchor:middle;text-align:center;stroke:none;font-family:Sans">
+            <tspan x="50" y="50" id="tspan2993">Block::Operator</tspan>
+          </text>
+						</g>
+					</svg>
+				</Image>
+				<Type>Math</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g transform="translate(0,-952.36218)" id="layer1">
+							<rect width="100" height="99.910004" x="0" y="0.090000004" transform="translate(0,952.36218)" id="rect2991" style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"/>
+						</g>
+					</svg>
+				</Image>
+				<Type>Mux</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Border>
+					<svg version="1.1" width="60" height="30" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g transform="translate(0,-1022.3622)" id="layer1">
+							<rect width="58.121166" height="28.121166" ry="14.060583" x="0.9394173" y="1023.3016" id="rect2996" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"/>
+						</g>
+					</svg>
+				</Border>
+				<Image>
+					<svg version="1.1" width="60" height="30" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<text x="30" y="15" id="text3010" xml:space="preserve" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+          <tspan x="30" y="15" id="tspan3012">Block::Port</tspan>
+        </text>
+					</svg>
+				</Image>
+				<Type>Outport</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1">
+							<text x="50" y="50" id="text3001" xml:space="preserve" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+            <tspan x="50" y="50" id="tspan3003">Block::Operator</tspan>
+          </text>
+						</g>
+					</svg>
+				</Image>
+				<Type>RelationalOperator</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg2">
+						<title id="title3802">Saturate</title>
+						<defs id="defs4"/>
+						<metadata id="metadata7"/>
+						<path d="m 21.343889,77.165351 15.019759,0 L 69.631521,24 84,24" id="path3774" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+						<path d="m 51.778672,20.078738 0,62.598424" id="path3776" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+						<path d="m 21.739143,50.393698 61.264826,0" id="path3778" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+					</svg>
+				</Image>
+				<Type>Saturate</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g transform="translate(0,-952.36218)" id="layer1">
+							<rect width="74.246216" height="42.426407" x="12.687822" y="962.45862" id="rect3832" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"/>
+						</g>
+					</svg>
+				</Image>
+				<Type>Scope</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1">
+							<text x="50" y="50" id="text3001" xml:space="preserve" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans">
+            <tspan x="50" y="50" id="tspan3003">Block::Operator</tspan>
+          </text>
+						</g>
+					</svg>
+				</Image>
+				<Type SubType="Compare To Constant">SubSystem</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g id="layer1">
+							<text x="50" y="50" id="text2991" xml:space="preserve" style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;text-anchor:middle;text-align:center;stroke:none;font-family:Sans">
+            <tspan x="50" y="50" id="tspan2993">+</tspan>
+          </text>
+						</g>
+					</svg>
+				</Image>
+				<Type>Sum</Type>
+			</BlockDesign>
+			<BlockDesign>
+				<Image>
+					<svg version="1.1" width="100" height="100" id="svg3009">
+						<defs id="defs3011"/>
+						<metadata id="metadata3014"/>
+						<g transform="translate(0,-952.36218)" id="layer1">
+							<rect width="6.1871104" height="6.1243801" x="41.154118" y="966.15198" id="rect3006" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"/>
+							<path d="m 41.423146,968.61373 c -13.666931,0 -27.333897,-2e-5 -41.0008279,0" id="path3776" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+							<path d="m 44.920178,968.55368 35.508632,34.52472 18.651024,0" id="path3778" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+							<path d="m 16.764368,993.41146 0,20.65474" id="path3780" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+							<path d="m 16.854023,1003.2585 -16.49895482,0" id="path3782" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+							<path d="m 0.35506818,1038.8039 41.15773282,0" id="path3784" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+							<rect width="5.9181056" height="6.1243801" x="41.423149" y="1035.1414" id="rect3786" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none"/>
+						</g>
+					</svg>
+				</Image>
+				<Type>Switch</Type>
+			</BlockDesign>
+		</BlockDesigns></ModuleInfo></TctGeneratedModules>
